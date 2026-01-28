@@ -1,0 +1,48 @@
+
+:root {
+  --egreen: rgb(0, 153, 0);
+}
+
+body {
+  padding: 2em;
+}
+
+main {
+  width: 60em;
+  margin: auto;
+  margin-bottom: 4em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 6em;
+  font-variant: small-caps;
+  line-height: 1em;
+  margin: 3rem 0;
+}
+
+.twolang {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width:60rem) {
+  main {
+    width: unset;
+  }
+
+  .twolang {
+    display: block;
+  }
+  .twolang p:first-child {
+    text-align: left;
+    margin-right: 5em;
+  }
+  .twolang p:last-child {
+    text-align: right;
+    margin-left: 5em;
+    opacity: 60%;
+  }
+}
