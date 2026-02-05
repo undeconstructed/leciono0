@@ -20,6 +20,10 @@ h1 {
   font-family: "Caveat", sans-serif;
 }
 
+a:link, a:visited {
+  color: var(--verda);
+}
+
 @media screen {
   body {
     padding: 0 2em;
@@ -31,6 +35,7 @@ h1 {
     width: 60em;
     margin: auto;
     margin-bottom: 4em;
+    background: white no-repeat center/contain url(../bobeloj.svg);
   }
 
   .heading {
@@ -38,11 +43,38 @@ h1 {
     margin-bottom: 1em;
   }
 
+  .text {
+    padding: 0 1em;
+    background-color: #fffe;
+    font-size: 1.2em;
+  }
+
   .twolang {
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+
+  .sago {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+  }
+  .sago div:first-child {
+    flex-grow: 1;
+    background-color: var(--verda);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    padding: .5em 0;
+  }
+  .sago div:last-child {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5em 0 5em 8em;
+    border-color: transparent transparent transparent var(--verda);
   }
 
   .print {
@@ -67,6 +99,12 @@ h1 {
     margin-left: 5em;
     opacity: 60%;
   }
+  .sago div:first-child {
+    padding: .3em 0;
+  }
+  .sago div:last-child {
+    border-width: 4em 0 4em 6em;
+  }
 }
 
 @media print {
@@ -88,21 +126,20 @@ h1 {
   }
 
   .page {
-    /* position: absolute; */
-    background-color: white;
     border-top: 1em solid var(--verda);
     border-bottom: 1em solid var(--verda);
     break-inside: avoid;
     break-after: always;
     height: 100vh;
     width: 100vw;
+    background: white no-repeat center/contain url(../bobeloj.svg);
   }
 
   .heading {
     /* background-color: var(--verda); */
     /* color: white; */
     /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
-    height: 7em;
+    height: 6.8em;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -115,6 +152,7 @@ h1 {
 
   .text {
     padding: 0 1em;
+    background-color: #fffe;
   }
 
   p {
@@ -127,12 +165,11 @@ h1 {
     width: 8em;
     height: 8em;
     margin-left: 1em;
+    position: relative;
+    top: .7em;
   }
 
   img {
-    /* position: absolute;
-    bottom: 1em;
-    right: 1em; */
     width: 8em;
     height: 8em;
   }
