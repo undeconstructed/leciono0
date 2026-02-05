@@ -25,17 +25,22 @@ a:link, a:visited {
 }
 
 @media screen {
+  .print {
+    display: none;
+  }
+
   body {
     padding: 0 2em;
     border-top: 1em solid var(--verda);
     border-bottom: 1em solid var(--verda);
+    background: white no-repeat center/contain fixed url(../bobeloj.svg);
   }
 
   main {
     width: 60em;
     margin: auto;
-    margin-bottom: 4em;
-    background: white no-repeat center/contain url(../bobeloj.svg);
+    padding-bottom: 3em;
+    background-color: #fffe;
   }
 
   .heading {
@@ -45,7 +50,6 @@ a:link, a:visited {
 
   .text {
     padding: 0 1em;
-    background-color: #fffe;
     font-size: 1.2em;
   }
 
@@ -57,7 +61,7 @@ a:link, a:visited {
   }
 
   .sago {
-    margin-top: 1em;
+    margin-top: 2em;
     display: flex;
     align-items: center;
   }
@@ -76,15 +80,20 @@ a:link, a:visited {
     border-width: 5em 0 5em 8em;
     border-color: transparent transparent transparent var(--verda);
   }
-
-  .print {
-    display: none;
-  }
 }
 
 @media (max-width:60rem) {
+  body {
+    padding: 0;
+  }
+
   main {
-    width: unset;
+    width: 100vw;
+  }
+
+  h1 {
+    font-size: 5em;
+    padding: 0 .3em 0 0;
   }
 
   .twolang {
@@ -99,6 +108,7 @@ a:link, a:visited {
     margin-left: 5em;
     opacity: 60%;
   }
+
   .sago div:first-child {
     padding: .3em 0;
   }
