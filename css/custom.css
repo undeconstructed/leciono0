@@ -136,20 +136,28 @@ a:link, a:visited {
   }
 
   .page {
-    border-top: 1em solid var(--verda);
-    border-bottom: 1em solid var(--verda);
+    /* background: linear-gradient(0deg,rgba(0, 153, 0, 1) 0%, rgba(0, 153, 0, 1) 1em, rgba(255, 255, 255, 0.85) 18%, rgba(255, 255, 255, 0.85) 100%), no-repeat center/contain url(../bobeloj.svg); */
+    background: linear-gradient(0deg,rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%), url(../bobeloj.svg) 50% 20% / 120% 80% no-repeat border-box;
+    border-top: 1.2em solid var(--verda);
+    border-bottom: 1.2em solid var(--verda);
     break-inside: avoid;
     break-after: always;
     height: 100vh;
     width: 100vw;
-    background: white no-repeat center/contain url(../bobeloj.svg);
+    padding: 0 3em 1em 3em;
+    display: grid;
+    grid-template-columns: 1fr 8em;
+    grid-template-rows: 6em 1fr 8em;
+    gap: 0px 0px;
+    grid-template-areas: 
+      "heading heading"
+      "text text"
+      "foot qr";
   }
 
   .heading {
-    /* background-color: var(--verda); */
-    /* color: white; */
-    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
-    height: 6.8em;
+    /* height: 6.8em; */
+    grid-area: heading;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -158,29 +166,43 @@ a:link, a:visited {
   h1 {
     font-size: 3em;
     text-align: center;
+    padding-right: .3em;
   }
 
   .text {
-    padding: 0 1em;
-    background-color: #fffe;
+    grid-area: text;
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 0.9em;
     text-align: justify;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .eo p {
+    line-height: 1.8em;
+  }
+
+  .foot {
+    grid-area: foot;
+    font-family: "Caveat", sans-serif;
+    font-size: 3em;
+    padding-right: .5em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
   }
 
   .qr {
-    float: right;
-    width: 8em;
-    height: 8em;
-    margin-left: 1em;
-    position: relative;
-    top: .7em;
+    grid-area: qr;
+    width: 100%;
+    height: 100%;
   }
 
   img {
-    width: 8em;
-    height: 8em;
+    width: 100%;
+    height: 100%;
   }
 }
